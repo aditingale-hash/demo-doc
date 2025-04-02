@@ -4,9 +4,9 @@ name: Python CI/CD Pipeline
 # Controls when the workflow will run
 on:
   push:
-    branches: [ "main" ] # Run on pushes to the main branch
+    branches: [ "master" ] # Run on pushes to the main branch
   pull_request:
-    branches: [ "main" ] # Also run on pull requests targeting the main branch
+    branches: [ "master" ] # Also run on pull requests targeting the main branch
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
