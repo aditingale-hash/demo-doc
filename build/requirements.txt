@@ -1,0 +1,2 @@
+Flask==2.3.3  # Use a specific version
+pytest==7.4.3 # Use a specific version
