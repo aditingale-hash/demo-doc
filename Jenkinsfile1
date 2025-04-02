@@ -1,0 +1,39 @@
+
+
+pipeline {
+    
+    agent any
+
+    
+    stages {
+        // Stage 1: deploy on docker Container
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                // Placeholder for deployment steps
+                // For example, using Docker to run the application
+                sh 'docker build -t simple-flask-app .'
+                sh 'docker run -d -p 5000:5000 simple-flask-app'
+            }
+        }      
+
+        
+    }
+
+    // 5. Post Actions: Actions to run after the pipeline completes (success, failure, etc.)
+    post {
+        always {
+            echo 'Pipeline finished.'
+            // Clean up the workspace
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline succeeded!'
+            // Maybe send a success notification
+        }
+        failure {
+            echo 'Pipeline failed!'
+            // Maybe send a failure notification (e.g., email, Slack)
+        }
+    } 
+}
